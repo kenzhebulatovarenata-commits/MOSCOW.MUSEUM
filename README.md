@@ -15,7 +15,7 @@
       width: 100%;
       margin-bottom: 20px;
       border-radius: 5px;
-      pointer-events: none; /* человек не сможет нажимать и случайно открывать fullscreen */
+      pointer-events: none;
     }
     p {
       font-size: 18px;
@@ -25,31 +25,36 @@
 </head>
 <body>
 
-  <!-- Блок 1 -->
-  <video autoplay muted playsinline loop>
+  <video class="autoplay" muted playsinline loop>
     <source src="vid 1.mp4" type="video/mp4">
   </video>
   <p>Текст между анимациями 1 и 2</p>
 
-  <!-- Блок 2 -->
-  <video autoplay muted playsinline loop>
+  <video class="autoplay" muted playsinline loop>
     <source src="vid 2.mp4" type="video/mp4">
   </video>
   <p>Текст после второй анимации</p>
 
-  <!-- Блок 3 -->
-  <video autoplay muted playsinline loop>
+  <video class="autoplay" muted playsinline loop>
     <source src="animation3.mp4" type="video/mp4">
   </video>
   <p>Текст после третьей анимации</p>
 
-  <!-- Шаблон для добавления новых -->
-  <!--
-  <video autoplay muted playsinline loop>
-    <source src="название.mp4" type="video/mp4">
-  </video>
-  <p>Текст между видео</p>
-  -->
+  <script>
+    // насильный автоплей
+    document.querySelectorAll('video.autoplay').forEach(v => {
+      v.addEventListener('canplay', () => {
+        v.play().catch(() => {});
+      });
+    });
+
+    // запасной вариант — попытаться проиграть через 1 секунду
+    setTimeout(() => {
+      document.querySelectorAll('video.autoplay').forEach(v => {
+        v.play().catch(() => {});
+      });
+    }, 1000);
+  </script>
 
 </body>
 </html>
