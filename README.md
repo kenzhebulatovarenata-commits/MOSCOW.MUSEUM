@@ -1,4 +1,3 @@
-# ARCHES ARE AMONG US
 <!DOCTYPE html>
 <html lang="ru">
 <head>
