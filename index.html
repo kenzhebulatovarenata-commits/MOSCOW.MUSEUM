@@ -1,64 +1,52 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Музей Москвы</title>
+  <meta charset="UTF-8">
+  <title>АРКИ СРЕДИ НАС</title>
 
-  <!-- Подключаем Inter Tight -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;700&display=swap" rel="stylesheet">
+  <!-- Подключение шрифта Inter Tight -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700&display=swap" rel="stylesheet">
 
   <style>
     body {
-      margin: 0;
-      padding: 40px;
-      background: #000;
-      color: #fff;
       font-family: 'Inter Tight', sans-serif;
+      background-color: #000;
+      color: #fff;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      line-height: 1.5;
     }
-    /* МУЗЕЙ МОСКВЫ — всегда в одну строку */
-.title-96 {
-  font-size: clamp(24px, 8vw, 48px);
-  font-weight: 700;
-  line-height: 1.1;
-  white-space: nowrap;
-  margin-bottom: 40px;
-}
 
-/* АРКИ СРЕДИ НАС — свободный перенос на несколько строк */
-.title-144 {
-  font-size: clamp(96px, 12vw, 144px);
-  font-weight: 700;
-  line-height: 1.1;
-  white-space: normal;  /* теперь можно переносить строки */
-  max-width: 900px;     /* регулирует ширину блока */
-  margin-bottom: 80px;
-}
-    
-    /* Основной текст */
-    .text-block {
-      font-size: 24px;
-      font-weight: 300;
-      line-height: 1.4;
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 40px;
       text-align: left;
-      margin: 40px 0;
-      max-width: 900px;
+    }
+    
+    h2 {
+      font-size: 144px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 40px;
+      text-align: left;
     }
 
-    /* Видео-анимации */
-    video.animate-me {
+    video {
       width: 100%;
-      opacity: 0;
-      transition: opacity 1s ease;
-      margin: 60px 0;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      pointer-events: none;
     }
 
-    video.animate-me.active {
-      opacity: 1;
+    p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #ccc;
     }
   </style>
 </head>
-
 <body>
 
   <h1 class="title-96">МУЗЕЙ МОСКВЫ</h1>
@@ -143,24 +131,19 @@
     <source src="vid 16.mp4" type="video/mp4">
   </video>
   <p>Текст после третьей анимации</p>
-
-    <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          el.classList.add('active');
-
-          if (el.tagName === 'VIDEO') {
-            el.play().catch(() => {});
-          }
-
-          observer.unobserve(el);
-        }
+  
+  <script>
+    document.querySelectorAll('video.autoplay').forEach(v => {
+      v.addEventListener('canplay', () => {
+        v.play().catch(() => {});
       });
-    }, { threshold: 0.2 });
+    });
 
-    document.querySelectorAll('.animate-me').forEach(el => observer.observe(el));
+    setTimeout(() => {
+      document.querySelectorAll('video.autoplay').forEach(v => {
+        v.play().catch(() => {});
+      });
+    }, 1000);
   </script>
 
 </body>
