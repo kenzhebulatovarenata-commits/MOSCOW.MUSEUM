@@ -16,23 +16,25 @@
       color: #fff;
       font-family: 'Inter Tight', sans-serif;
     }
+    /* МУЗЕЙ МОСКВЫ — всегда в одну строку */
+.title-96 {
+  font-size: clamp(36px, 8vw, 96px);
+  font-weight: 700;
+  line-height: 1.1;
+  white-space: nowrap;
+  margin-bottom: 40px;
+}
 
-    /* Заголовки */
-    .title-96 {
-      font-size: 48px;
-      font-weight: 700;
-      text-align: left;
-      margin-bottom: 40px;
-    }
-
-    .title-144 {
-      font-size: 144px;
-      font-weight: 700;
-      line-height: 1.1;
-      text-align: left;
-      margin-bottom: 80px;
-    }
-
+/* АРКИ СРЕДИ НАС — свободный перенос на несколько строк */
+.title-144 {
+  font-size: clamp(48px, 12vw, 144px);
+  font-weight: 700;
+  line-height: 1.1;
+  white-space: normal;  /* теперь можно переносить строки */
+  max-width: 900px;     /* регулирует ширину блока */
+  margin-bottom: 80px;
+}
+    
     /* Основной текст */
     .text-block {
       font-size: 24px;
