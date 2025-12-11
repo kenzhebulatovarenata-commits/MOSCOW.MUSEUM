@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+АРКИ СРЕДИ НАС
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
