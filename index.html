@@ -11,8 +11,8 @@
       font-family: 'Inter Tight', sans-serif;
       background-color: #000;
       color: #fff;
-      margin: 70px 20px;
-      padding: 5px;
+      margin: 0;
+      padding: 0px;
       line-height: 1.5;
     }
 
@@ -34,6 +34,13 @@
       line-height: 1.0;
       white-space: pre-line;
     }
+    .content {
+      padding-top: 235px;   /* место под плашку */
+      padding-left: 20px;   /* совпадает с плашкой */
+      padding-right: 20px; 
+      width: 100%;          /* теперь контент тянется по ширине */
+      box-sizing: border-box; /* чтобы padding не увеличивал ширину */
+    }
 
     h2 {
       font-size: 144px;
@@ -43,23 +50,14 @@
       margin-bottom: 40px;
       text-align: left;
     }
-
-    /* Контейнер контента с такими же отступами, как у плашки */
-.content {
-  padding-top: 235px;   /* немного больше, чтобы не заезжало под плашку */
-  padding-left: 20px;   /* совпадает с плашкой */
-  padding-right: 20px; 
-  width: calc(100% - 40px);/* совпадает с плашкой */
-}
-
 /* Видео на всю ширину контента */
-video {
-  width: 100%;
-  height: auto; 
-  margin-bottom: 20px;
-  border-radius: 6px;
-  pointer-events: none;
-}
+    video {
+      width: 100%;
+      height: auto; 
+      margin-bottom: 20px;
+      border-radius: 6px;
+      pointer-events: none;
+    }
 
     p {
       font-size: 20px;
