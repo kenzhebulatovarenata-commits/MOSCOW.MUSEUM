@@ -8,13 +8,13 @@
 
   <style>
     /* Заголовки */
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3 {
         font-family: 'Inter Tight', sans-serif;
         font-weight: 700; /* Bold */
     }
 
     /* Основной текст */
-    body, p, span, li, a {
+   p {
         font-family: 'Inter Tight', sans-serif;
         font-weight: 300; /* Light */
         color: #fff;
@@ -462,6 +462,43 @@
     }, 1000);
   </script>
       </div>
+  <!-- Footer -->
+<div class="footer">
+  <p>Музей Москвы — <a href="https://mosmuseum.ru" target="_blank">Behance</a></p>
+  <p>Рената Кенжебулатова — <a href="https://www.behance.net/renata_kenzhe" target="_blank">Behance</a></p>
+  <p>Инна Пименова — <a href="https://www.behance.net/renata_kenzhe" target="_blank">Behance</a></p>
+</div>
+
+<style>
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;       /* такая же плашка, как в шапке */
+  padding: 10px 20px;      /* отступы */
+  text-align: center;
+  z-index: 999;
+  box-sizing: border-box;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 15px;         /* маленький шрифт */
+  color: black;            /* текст чёрный на белом фоне */
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 300;        /* легкий текст */
+}
+
+.footer a {
+  color: black;
+  text-decoration: none;   /* без подчеркивания */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* при наведении подчеркивание */
+}
+</style>
 
 </body>
 </html>
