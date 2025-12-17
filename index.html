@@ -22,7 +22,7 @@
     
     body {
       margin: 0;
-      padding: 37px;
+      padding: 33px;
       line-height: 1.5;
       background: url('background.png') no-repeat center top;
       background-size: 100% auto;
@@ -36,7 +36,7 @@
       left: 0;
       width: 100%;
       background: white;
-      padding: 10px 40px 10px 40px;
+      padding: 5px 40px 5px 40px;
       z-index: 999;
     }
 
@@ -80,6 +80,7 @@
       line-height: 0.5;
       white-space: pre-line;
     }
+    
     .title-image {
       position: absolute;
       right: 0;            /* прижато к правой границе блока */
@@ -102,8 +103,7 @@
       font-size: 50px;
       margin-bottom: 30px;
       color: #ccc;
-      text-align: justify;         /* justify выравнивает по ширине */
-      text-align-last: left;       /* последняя строка выравнена влево */
+      text-align: left;         /* justify выравнивает по ширине */
       word-spacing: normal;        /* расстояние между словами */
       letter-spacing: normal;      /* расстояние между буквами */
   /* glyph scaling напрямую в CSS нельзя, используется font-feature-settings */
@@ -470,10 +470,10 @@
       </div>
   <!-- Footer -->
 <div class="footer">
-  <p><a href="https://mosmuseum.ru" target="_blank" class="underline">Официальный сайт Музея Москвы</a></p>
+  <p><a href="https://mosmuseum.ru" <span class="underline">Официальный сайт Музея Москвы</span></a></p>
   <p>Над проектом работали:<p>
-  <p>Рената Кенжебулатова — <a href="https://www.behance.net/renata_kenzhe" target="_blank" class="underline">Behance</a></p>
-  <p>Инна Пименова — <a href="https://t.me/inveira" target="_blank" class="underline">Telegram</a></p>
+  <p>Рената Кенжебулатова — <a href="https://www.behance.net/renata_kenzhe" <span class="underline">Behance</span></a></p>
+  <p>Инна Пименова — <a href="https://t.me/inveira" <span class="underline">Telegram</span></a></p>
 </div>
 
 <style>
@@ -503,11 +503,6 @@
 .footer a:hover {
   text-decoration: underline;
 }
-  a {
-      text-decoration: underline; /* всегда подчеркивание */
-      color: black;               /* цвет ссылки, можно изменить */
-      }
-
     a:hover {
       text-decoration: underline; /* при наведении остаётся подчеркивание */
       }
